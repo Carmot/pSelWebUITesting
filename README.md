@@ -117,6 +117,13 @@ Ran 10 tests in 82.359s
 FAILED (failures=1, errors=5)
 ```
 
+## TO-DO
+
+1. Not able to get web ui elements to properly test them. Tried waiting for some conditions but it doesn't work for some elements. Most of the elements ids are dynamically generated.
+2. Test when loading web page and clicking on button not working when checking the page title, not yet loaded when asserting the title name.
+3. Add more web ui testing about position, sizes and other graphical elements.
+4. Add classes for testing other browsers, not only Firefox.
+
 ## Author
 
 * **Jose Angel Gariburo Cortes** - *Initial work* - [Carmot](https://github.com/Carmot)
