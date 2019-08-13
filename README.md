@@ -1,4 +1,4 @@
-# Python $ Selenium Web UI Testing
+# Python & Selenium Web UI Testing
 
 This project is an initial approach on how to test a web UI using python and selenium library for testing.
 
@@ -35,84 +35,78 @@ There are two options to run the tests:
 The output should be something in the same format as this:
 
 ```
-FE..EEE.E.
+E...EEEFE.
 ======================================================================
 ERROR: test_failogin (__main__.SysDigWebUITest)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "sysdig_python_selenium_webui_tests.py", line 113, in test_failogin
-    login.click()
-AttributeError: 'list' object has no attribute 'click'
+  File "sysdig_python_selenium_webui_tests.py", line 102, in test_failogin
+    wait = WebDriverWait(self.driver, self.max_load_seconds_).until(ec.element_to_be_clickable((By.CLASS_NAME, 'ember-view simple-btn simple-btn--login')))
+  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message:
+
 
 ======================================================================
 ERROR: test_loginbutton (__main__.SysDigWebUITest)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "sysdig_python_selenium_webui_tests.py", line 72, in test_loginbutton
-    self.assertEqual(self.driver.find_element_by_class_name('ember-view simple-btn simple-btn--login').text, 'Log in')
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 564, in find_element_by_class_name
-    return self.find_element(by=By.CLASS_NAME, value=name)
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: .ember-view simple-btn simple-btn--login
+  File "sysdig_python_selenium_webui_tests.py", line 59, in test_loginbutton
+    wait = WebDriverWait(self.driver, self.max_load_seconds_).until(ec.element_to_be_clickable((By.CLASS_NAME, 'ember-view simple-btn simple-btn--login')))
+  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message:
 
 
 ======================================================================
 ERROR: test_loginpos (__main__.SysDigWebUITest)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "sysdig_python_selenium_webui_tests.py", line 104, in test_loginpos
-    login = self.driver.find_element_by_class_name('ember-view simple-btn simple-btn--login')
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 564, in find_element_by_class_name
-    return self.find_element(by=By.CLASS_NAME, value=name)
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: .ember-view simple-btn simple-btn--login
+  File "sysdig_python_selenium_webui_tests.py", line 95, in test_loginpos
+    wait = WebDriverWait(self.driver, self.max_load_seconds_).until(ec.element_to_be_clickable((By.CLASS_NAME, 'ember-view simple-btn simple-btn--login')))
+  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message:
 
 
 ======================================================================
 ERROR: test_logopos (__main__.SysDigWebUITest)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "sysdig_python_selenium_webui_tests.py", line 97, in test_logopos
-    self.assertEqual(logo.size.width, 520.0)
-AttributeError: 'dict' object has no attribute 'width'
+  File "sysdig_python_selenium_webui_tests.py", line 88, in test_logopos
+    wait = WebDriverWait(self.driver, self.max_load_seconds_).until(ec.visibility_of((By.XPATH, '//*[@class="ember-view block-authentication-form"]/div/div/img')))
+  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\support\expected_conditions.py", line 144, in __call__
+    return _element_if_visible(self.element)
+  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\support\expected_conditions.py", line 148, in _element_if_visible
+    return element if element.is_displayed() == visibility else False
+AttributeError: 'tuple' object has no attribute 'is_displayed'
 
 ======================================================================
 ERROR: test_thirdpartybutton (__main__.SysDigWebUITest)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "sysdig_python_selenium_webui_tests.py", line 90, in test_thirdpartybutton
-    self.assertTrue(self.driver.find_element_by_class_name('ember-view block-login__third-party-button'))
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 564, in find_element_by_class_name
-    return self.find_element(by=By.CLASS_NAME, value=name)
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: .ember-view block-login__third-party-button
+  File "sysdig_python_selenium_webui_tests.py", line 81, in test_thirdpartybutton
+    wait = WebDriverWait(self.driver, self.max_load_seconds_).until(ec.element_to_be_clickable((By.CLASS_NAME, 'ember-view block-login__third-party-button')))
+  File "C:\Users\jose.gariburo\AppData\Roaming\Python\Python37\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message:
 
 
 ======================================================================
-FAIL: test_aaaloadpage (__main__.SysDigWebUITest)
+FAIL: test_notacustomer (__main__.SysDigWebUITest)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "sysdig_python_selenium_webui_tests.py", line 60, in test_aaaloadpage
-    self.assertLessEqual(elapsed_seconds, self.max_load_seconds_)
-AssertionError: 11.864984399999999 not less than or equal to 10.0
+  File "sysdig_python_selenium_webui_tests.py", line 113, in test_notacustomer
+    self.assertEqual(self.driver.title, 'Sign Up | Sysdig')
+AssertionError: 'Login - Sysdig' != 'Sign Up | Sysdig'
+- Login - Sysdig
++ Sign Up | Sysdig
+
 
 ----------------------------------------------------------------------
-Ran 10 tests in 82.359s
+Ran 10 tests in 109.757s
 
 FAILED (failures=1, errors=5)
 ```
